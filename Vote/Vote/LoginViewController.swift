@@ -15,8 +15,5 @@ import FirebaseStorage
 
 class LoginViewController: UIViewController {
     
-    @IBAction func LoadMainPage(unwindSegure: UIStoryboardSegue) {
-    }
-    
-    
+
 }

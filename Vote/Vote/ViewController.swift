@@ -75,6 +75,10 @@ UINavigationControllerDelegate {
     // Action Functions
     //--
     
+
+    // Segue Control
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
+    
     @IBAction func LoadTopic(_ sender: UIButton) {
         
         self.topicRef.child(topic).observeSingleEvent(of: .value, with: { snapshot in

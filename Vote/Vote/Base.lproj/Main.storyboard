@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
-        <!--Login View Controller-->
+        <!--View Controller-->
         <scene sceneID="HcG-Dm-slk">
             <objects>
-                <viewController id="XOr-dm-DIP" customClass="LoginViewController" customModule="Vote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XOr-dm-DIP" customClass="ViewController" customModule="Vote" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LSg-ju-4Gi"/>
                         <viewControllerLayoutGuide type="bottom" id="7mM-dD-o8e"/>
@@ -204,8 +204,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="LoadMainPage:" destination="XOr-dm-DIP" eventType="touchUpInside" id="W9g-hj-znF"/>
-                                    <segue destination="8RO-Lf-6hX" kind="unwind" unwindAction="LoadMainPageWithUnwindSegure:" id="wR9-8x-J5C"/>
+                                    <segue destination="8RO-Lf-6hX" kind="unwind" unwindAction="unwindToMenuWithSegue:" id="mHa-st-ku8"/>
                                 </connections>
                             </button>
                         </subviews>
