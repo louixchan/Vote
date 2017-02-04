@@ -331,5 +331,12 @@ UINavigationControllerDelegate {
         let documentsDirectory = paths[0]
         return documentsDirectory
     }
+    
+    func getTopic(name:String!) -> Topic? {
+        
+        
+        
+        return nil
+    }
 }
 
