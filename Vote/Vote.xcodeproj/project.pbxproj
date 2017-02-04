@@ -19,6 +19,7 @@
 		84CFA5A61E391DCF004E2FA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CFA5A41E391DCF004E2FA3 /* LaunchScreen.storyboard */; };
 		84CFA5B11E391DCF004E2FA3 /* VoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFA5B01E391DCF004E2FA3 /* VoteTests.swift */; };
 		84CFA5BC1E391DCF004E2FA3 /* VoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFA5BB1E391DCF004E2FA3 /* VoteUITests.swift */; };
+		916BFEB91E46014700017F21 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916BFEB81E46014700017F21 /* LoginViewController.swift */; };
 		A1575551E100FEAFD2933322 /* Pods_Vote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0D42E226118B06F50478E1 /* Pods_Vote.framework */; };
 		CA2DBF50D1FF8DAF8299DB1A /* Pods_VoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8518699E55EA22F3B509879 /* Pods_VoteTests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		84CFA5B71E391DCF004E2FA3 /* VoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CFA5BB1E391DCF004E2FA3 /* VoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteUITests.swift; sourceTree = "<group>"; };
 		84CFA5BD1E391DCF004E2FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		916BFEB81E46014700017F21 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BED654E69DB24C841D8A2CB1 /* Pods-Vote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vote/Pods-Vote.release.xcconfig"; sourceTree = "<group>"; };
 		D8518699E55EA22F3B509879 /* Pods_VoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA10D4859BF3F9045B1F763F /* Pods-VoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoteUITests/Pods-VoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				84CFA59D1E391DCE004E2FA3 /* ViewController.swift */,
+				916BFEB81E46014700017F21 /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916BFEB91E46014700017F21 /* LoginViewController.swift in Sources */,
 				84CFA59E1E391DCE004E2FA3 /* ViewController.swift in Sources */,
 				84756A671E40DEB400BAEF65 /* Topic.swift in Sources */,
 				84CFA59C1E391DCE004E2FA3 /* AppDelegate.swift in Sources */,
