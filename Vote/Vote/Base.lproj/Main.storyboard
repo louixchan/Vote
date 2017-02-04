@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="HcG-Dm-slk">
             <objects>
-                <viewController id="XOr-dm-DIP" customClass="ViewController" customModule="Vote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XOr-dm-DIP" customClass="LoginViewController" customModule="Vote" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LSg-ju-4Gi"/>
                         <viewControllerLayoutGuide type="bottom" id="7mM-dD-o8e"/>
@@ -207,13 +207,73 @@
                                     <segue destination="8RO-Lf-6hX" kind="unwind" unwindAction="unwindToMenuWithSegue:" id="mHa-st-ku8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1C-ps-gqF">
+                                <rect key="frame" x="16" y="89" width="80" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.071577416429999999" blue="0.13189602110000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1Df-Vr-JDr"/>
+                                    <constraint firstAttribute="width" constant="80" id="LZe-zt-asm"/>
+                                </constraints>
+                                <state key="normal" title="Signout">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="SignOut:" destination="XOr-dm-DIP" eventType="touchUpInside" id="ovL-ar-kdr"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pr9-wB-iXj">
+                                <rect key="frame" x="120" y="89" width="153" height="118"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Create New Account" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ORa-nw-CbP">
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="39"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vd6-ZI-fPh">
+                                        <rect key="frame" x="0.0" y="43" width="153" height="23"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vX6-L8-YOG">
+                                        <rect key="frame" x="0.0" y="70" width="153" height="23.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xec-Iz-8Bu">
+                                        <rect key="frame" x="0.0" y="97.5" width="153" height="20.5"/>
+                                        <color key="backgroundColor" red="0.85292467949999995" green="0.0068730605390000003" blue="0.054811955010000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="SignUp">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SignUp:" destination="XOr-dm-DIP" eventType="touchUpInside" id="O4K-Ji-gx4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="9fJ-7x-nNr"/>
+                                    <constraint firstAttribute="width" constant="153" id="lwm-iK-9UL"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.26344324860000001" blue="0.54617387819999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mAs-2g-QVx" firstAttribute="centerY" secondItem="FMb-hc-RyN" secondAttribute="centerY" id="GoN-b0-qkp"/>
                             <constraint firstItem="mAs-2g-QVx" firstAttribute="leading" secondItem="FMb-hc-RyN" secondAttribute="leadingMargin" id="ORy-AM-SKP"/>
+                            <constraint firstItem="S1C-ps-gqF" firstAttribute="top" secondItem="LSg-ju-4Gi" secondAttribute="bottom" constant="69" id="QDI-0F-wvU"/>
+                            <constraint firstItem="pr9-wB-iXj" firstAttribute="top" secondItem="LSg-ju-4Gi" secondAttribute="bottom" constant="69" id="dy9-9j-zNR"/>
+                            <constraint firstItem="S1C-ps-gqF" firstAttribute="leading" secondItem="FMb-hc-RyN" secondAttribute="leadingMargin" id="eJy-D6-Jho"/>
+                            <constraint firstItem="pr9-wB-iXj" firstAttribute="centerX" secondItem="FMb-hc-RyN" secondAttribute="centerX" id="l7W-cf-BqD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newEmailInput" destination="vd6-ZI-fPh" id="0Fx-n2-oX7"/>
+                        <outlet property="newPWInput" destination="vX6-L8-YOG" id="Sj8-1K-S7d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63R-yW-4qe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8RO-Lf-6hX" userLabel="Exit" sceneMemberID="exit"/>
