@@ -8,7 +8,7 @@
 
 import Foundation
 import Firebase
-
+import GoogleSignIn
 
 
     
@@ -36,7 +36,18 @@ func modelSignUp(email:String, PW:String) {
             
             
         }
-    })
+        })
+    }
+    
+// Google Sign in when pressed
+func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
+            withError error: NSError!) {
+    if (error == nil) {
+        // Perform any operations on signed in user here.
+        // ...
+    } else {
+        print("\(error.localizedDescription)")
+    }
 }
 
 

@@ -237,13 +237,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vX6-L8-YOG">
-                                        <rect key="frame" x="0.0" y="70" width="153" height="23"/>
+                                        <rect key="frame" x="0.0" y="70" width="153" height="23.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xec-Iz-8Bu">
-                                        <rect key="frame" x="0.0" y="97" width="153" height="21"/>
+                                        <rect key="frame" x="0.0" y="97.5" width="153" height="20.5"/>
                                         <color key="backgroundColor" red="0.85292467949999995" green="0.0068730605390000003" blue="0.054811955010000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="SignUp">
@@ -266,6 +266,9 @@
                                 <state key="normal" title="Google Sign in ">
                                     <color key="titleColor" red="0.96595868009999997" green="0.99404227730000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="GoogleSignIn:" destination="XOr-dm-DIP" eventType="touchUpInside" id="0vK-Vg-9Qn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.26344324860000001" blue="0.54617387819999996" alpha="1" colorSpace="calibratedRGB"/>

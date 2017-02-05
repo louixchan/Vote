@@ -26,12 +26,16 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        // Signout the account from mainVC
+        modelSignOut()
+        
+        // For creating new Email PW Account
         newEmail = ""
         newPW = ""
         
-        // Google Sign in Step 7.
+        // Google Sign in Step 7. For automatic sign in.
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
+        GIDSignIn.sharedInstance().signInSilently()
     }
     
     @IBAction func SignOut(_ sender: UIButton) {
@@ -44,6 +48,14 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         
         modelSignUp(email: newEmail, PW: newPW)
     }
+
+    
+    @IBAction func GoogleSignIn(_ sender: Any) {
+
+        // This function will sign in or sign up user
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     
     
 }

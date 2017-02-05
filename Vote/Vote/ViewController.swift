@@ -51,6 +51,8 @@ UINavigationControllerDelegate {
         topic = "9090AC8C-59E0-473F-8F0E-8A7DDFFF4C89"
         //"0"
         
+        FIRAuth.auth()?.signIn(withEmail: "testing@gmail.com", password: "123456")
+        
     }
 
     override func didReceiveMemoryWarning() {

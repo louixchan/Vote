@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         
         // Comment for google login functionality testing
-        //FIRAuth.auth()?.signIn(withEmail: "testing@gmail.com", password: "123456")
+        // Copied this to viewDidLoad so you can continue testing in mainVC
+//        FIRAuth.auth()?.signIn(withEmail: "testing@gmail.com", password: "123456")
         
         // Override point for customization after application launch.
         return true
@@ -35,32 +36,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
         -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,
-                                                        sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                                                        annotation: [:])
+            return GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
     }
+
     
     //  Google Sign in Step 5. In the app delegate, implement the GIDSignInDelegate protocol to handle the sign-in process by defining the following methods
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
         if let error = error {
-            // ...
+            // error
+            print ("Error signing in with Google: %@", error)
             return
+        } else {
+            // No error
+            print ("No error implementing GIDSignInDelegate protocol")
         }
         
         guard let authentication = user.authentication else { return }
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                          accessToken: authentication.accessToken)
+        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         // ...
+        
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            // ...
+            if let error = error {
+                // error
+                print ("Error linking Google token to firebase auth: %@", error)
+                return
+            } else {
+                // No error
+                print ("No error implementing Firebase Auth with token from Google ")
+            }
+        }
     }
+            
+    // Cont of Google Sign in implementation
+    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!, withError error: NSError!) {
+            // Perform any operations when the user disconnects from app here.
+            // ...
+        }
     
-    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
-                withError error: NSError!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-        
-        
-    }
 
 
 
@@ -86,6 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
+
+
 
