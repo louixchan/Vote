@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GTMOAuth2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>088D81B6E12F941F466CA936E5D02072</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47AF8A997125E5719562BFBBC039606F</key>
+		<key>4634014B1D1D3D2CB3496277777DFB37</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68A99BB69303E30AD958316AD0D58B60</key>
+		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D00FAC855F2C66090A83AEA5063674EC</key>
+		<key>B8C69BAB32AEACBFC0D66E400017F132</key>
 		<dict>
 			<key>primary</key>
 			<true/>

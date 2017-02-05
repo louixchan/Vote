@@ -12,7 +12,7 @@ import Firebase
 
 
     
-// Signout to the app, will think of a better naming convention later on
+// Actual Signout function in model but not controller, will think of a better naming convention later on
 
 func modelSignOut() {
     let firebaseAuth = FIRAuth.auth()
@@ -22,6 +22,8 @@ func modelSignOut() {
         print ("Error signing out: %@", signOutError)
     }
 }
+
+// SignUp by email and password
 
 func modelSignUp(email:String, PW:String) {
     FIRAuth.auth()?.createUser(withEmail: email, password: PW, completion: {(user,error) in
