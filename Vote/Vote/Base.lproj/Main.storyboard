@@ -259,11 +259,14 @@
                                     <constraint firstAttribute="width" constant="153" id="lwm-iK-9UL"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzx-nr-bij">
-                                <rect key="frame" x="120" y="255" width="153" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzx-nr-bij">
+                                <rect key="frame" x="131" y="215" width="130" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.071577416429999999" blue="0.13189602110000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Google Sign in ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="dnB-Uo-muU"/>
+                                    <constraint firstAttribute="height" constant="30" id="ena-e1-b13"/>
+                                </constraints>
+                                <state key="normal" title="Google Sign in / up">
                                     <color key="titleColor" red="0.96595868009999997" green="0.99404227730000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -276,9 +279,11 @@
                             <constraint firstItem="mAs-2g-QVx" firstAttribute="centerY" secondItem="FMb-hc-RyN" secondAttribute="centerY" id="GoN-b0-qkp"/>
                             <constraint firstItem="mAs-2g-QVx" firstAttribute="leading" secondItem="FMb-hc-RyN" secondAttribute="leadingMargin" id="ORy-AM-SKP"/>
                             <constraint firstItem="S1C-ps-gqF" firstAttribute="top" secondItem="LSg-ju-4Gi" secondAttribute="bottom" constant="69" id="QDI-0F-wvU"/>
+                            <constraint firstItem="Pzx-nr-bij" firstAttribute="top" secondItem="pr9-wB-iXj" secondAttribute="bottom" constant="8" id="cNj-Je-8xB"/>
                             <constraint firstItem="pr9-wB-iXj" firstAttribute="top" secondItem="LSg-ju-4Gi" secondAttribute="bottom" constant="69" id="dy9-9j-zNR"/>
                             <constraint firstItem="S1C-ps-gqF" firstAttribute="leading" secondItem="FMb-hc-RyN" secondAttribute="leadingMargin" id="eJy-D6-Jho"/>
                             <constraint firstItem="pr9-wB-iXj" firstAttribute="centerX" secondItem="FMb-hc-RyN" secondAttribute="centerX" id="l7W-cf-BqD"/>
+                            <constraint firstItem="Pzx-nr-bij" firstAttribute="centerX" secondItem="FMb-hc-RyN" secondAttribute="centerX" id="mGm-4G-ZDp"/>
                         </constraints>
                     </view>
                     <connections>

@@ -12,6 +12,9 @@ target 'Vote' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod ‘GoogleSignIn’
+  pod ‘FacebookCore’
+  pod ‘FacebookLogin’
+  pod ‘FacebookShare’
 
   # Pods for Vote
 
@@ -23,6 +26,9 @@ target 'Vote' do
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
     pod ‘GoogleSignIn’
+    pod ‘FacebookCore’
+    pod ‘FacebookLogin’
+    pod ‘FacebookShare’
   end
 
   target 'VoteUITests' do
@@ -33,6 +39,9 @@ target 'Vote' do
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
     pod ‘GoogleSignIn’
+    pod ‘FacebookCore’
+    pod ‘FacebookLogin’
+    pod ‘FacebookShare’
   end
 
 end

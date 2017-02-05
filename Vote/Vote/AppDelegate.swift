@@ -9,13 +9,41 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FacebookLogin
+import FBSDKLoginKit
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FBSDKLoginButtonDelegate {
 
     var window: UIWindow?
 
-
+    //Facebook Login (Using FBSDKLoginButton)
+    public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if (error == nil) {
+//            let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+//            FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+//                // ...
+//                if let error = error {
+//                    // error
+//                    print ("Error linking FB token tofirebase auth: %@", error)
+//                    return
+//                } else {
+//                    // No error
+//                    print ("No error implementing Firebase Auth with token from FB ")
+//                }
+//            }
+        } else {
+            print(error.localizedDescription)
+            return
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("FB: User logged out...")
+    }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FIRApp.configure()
         
@@ -78,6 +106,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 
 
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
