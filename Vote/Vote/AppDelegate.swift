@@ -18,25 +18,6 @@ import FBSDKLoginKit
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
-
-    /* FBSDKLoginButtonDelegate
-    //Following functions are never called, but the delegate has to inherit FBSDKLoginButtonDelegate hence has to be implemented
-    // Function 1
-    public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        print("Facebook functino in delegate")
-        if (error == nil) {
-        } else {
-            print(error.localizedDescription)
-            return
-        }
-    }
-    // Function 2
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("FB: User logged out...")
-    }
-    
-    // ENDS HERE
-    */
     
     // For opening URL for 3rd part login as of now
     @available(iOS 9.0, *)
@@ -48,11 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             return FBSDKApplicationDelegate.sharedInstance().application(app,open: url,sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
         }
         
-        /* If sign in with google, return the following 
-            return GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
-           If sign in with facebook, return the following
-            return FBSDKApplicationDelegate.sharedInstance().application(app,open: url,sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-        */
     }
     
     
@@ -97,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             } else {
                 // No error
                 print ("No error implementing Firebase Auth with token from Google ")
+                
             }
         }
     }
