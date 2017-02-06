@@ -67,6 +67,7 @@
 		84CFA5BB1E391DCF004E2FA3 /* VoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteUITests.swift; sourceTree = "<group>"; };
 		84CFA5BD1E391DCF004E2FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91121A9D1E47613300DF58CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91121A9F1E48A66300DF58CF /* Vote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vote.entitlements; sourceTree = "<group>"; };
 		916BFEB81E46014700017F21 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		917CFCCD1E462CF4007A91CE /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		BA3C2C5D65944D1D04083273 /* Pods_VoteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +197,7 @@
 		84CFA59A1E391DCE004E2FA3 /* Vote */ = {
 			isa = PBXGroup;
 			children = (
+				91121A9F1E48A66300DF58CF /* Vote.entitlements */,
 				8449130B1E3D26EF001B4E69 /* Supporting Files */,
 				8449130A1E3D26E6001B4E69 /* Other */,
 				844913091E3D26DC001B4E69 /* Layouts */,
@@ -302,7 +304,13 @@
 				TargetAttributes = {
 					84CFA5971E391DCD004E2FA3 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5878FNA4EM;
 						LastSwiftMigration = 0820;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					84CFA5AB1E391DCF004E2FA3 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -665,6 +673,8 @@
 			baseConfigurationReference = 1E45E41C3BEB7644618ADD9F /* Pods-Vote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Vote/Vote.entitlements;
+				DEVELOPMENT_TEAM = 5878FNA4EM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -686,6 +696,8 @@
 			baseConfigurationReference = BED654E69DB24C841D8A2CB1 /* Pods-Vote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Vote/Vote.entitlements;
+				DEVELOPMENT_TEAM = 5878FNA4EM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

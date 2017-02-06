@@ -20,8 +20,10 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, FBSDKLoginButt
 
     // Facebook login compulsory function for FBSDKLoginButtonDelegate
     public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        print("Facebook functino in controller")
         if (error == nil) {
             print("Facebook no error")
+
             let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             FIRAuth.auth()?.signIn(with: credential) { (user, error) in
                 // ...

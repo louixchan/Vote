@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FacebookLogin
+import FBSDKCoreKit
 import FBSDKLoginKit
 
 
@@ -18,29 +19,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FBSDKL
 
     var window: UIWindow?
 
-    //Facebook Login (Using FBSDKLoginButton)
+    //Following functions are never called, but the delegate has to inherit FBSDKLoginButtonDelegate hence has to be implemented
+    // Function 1
     public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        print("Facebook functino in delegate")
         if (error == nil) {
-//            let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-//            FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-//                // ...
-//                if let error = error {
-//                    // error
-//                    print ("Error linking FB token tofirebase auth: %@", error)
-//                    return
-//                } else {
-//                    // No error
-//                    print ("No error implementing Firebase Auth with token from FB ")
-//                }
-//            }
         } else {
             print(error.localizedDescription)
             return
         }
     }
-    
+    // Function 2
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("FB: User logged out...")
+    }
+    
+    // ENDS HERE
+    
+    // For opening URL for 3rd part login as of now
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(app,open: url,sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        /* If sign in with google, return the following 
+            return GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
+           If sign in with facebook, return the following
+            return FBSDKApplicationDelegate.sharedInstance().application(app,open: url,sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        */
     }
     
     
@@ -53,22 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FBSDKL
         
         // Comment for google login functionality testing
         // Copied this to viewDidLoad so you can continue testing in mainVC
-//        FIRAuth.auth()?.signIn(withEmail: "testing@gmail.com", password: "123456")
+        //FIRAuth.auth()?.signIn(withEmail: "testing@gmail.com", password: "123456")
         
         // Override point for customization after application launch.
         return true
     }
 
     
-    // Google Sign in Step 4. Implement the application:openURL:options: method of your app delegate. The method should call the handleURL method of the GIDSignIn instance, which will properly handle the URL that your application receives at the end of the authentication process.
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
-        -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: [:])
-    }
-
-    
-    //  Google Sign in Step 5. In the app delegate, implement the GIDSignInDelegate protocol to handle the sign-in process by defining the following methods
+    //  Google Sign in Step 5. Implement the GIDSignInDelegate protocol to handle the sign-in process
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
         if let error = error {
@@ -97,15 +94,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, FBSDKL
         }
     }
             
-    // Cont of Google Sign in implementation
+    // Handle Google Sign in disconnection
     func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!, withError error: NSError!) {
             // Perform any operations when the user disconnects from app here.
             // ...
         }
     
 
-
-
+    // Any thing below is unchanged 
     
     
     func applicationWillResignActive(_ application: UIApplication) {
