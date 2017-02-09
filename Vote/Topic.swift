@@ -21,6 +21,19 @@ struct Topic{
     let options:[String: String]!
     let itemRef:FIRDatabaseReference?
     
+    init()
+    {
+        self.key = ""
+        self.title = ""
+        self.addedByUser = ""
+        self.itemRef = nil
+        self.options = [:]
+        self.description = ""
+        self.postDate = ""
+        self.postTime = ""
+        self.imageURL = ""
+    }
+    
     init (title:String, options:[String: String], description:String = "", addedByUser:String, key:String = "", imageURL:String = "")
     {
         self.key = key

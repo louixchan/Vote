@@ -48,7 +48,6 @@ UINavigationControllerDelegate {
         
         topic = "9090AC8C-59E0-473F-8F0E-8A7DDFFF4C89"
         //"0"
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,29 +76,48 @@ UINavigationControllerDelegate {
     
     @IBAction func LoadTopic(_ sender: UIButton) {
         
-        self.topicRef.child(topic).observeSingleEvent(of: .value, with: { snapshot in
+        Utility.getTopic(topicId: topic)
+        { (loadTopic, error)  in
             
-            var loadTopic:Topic
-            
-            if !snapshot.exists()
+            if error == nil
             {
-                return
-            }
-            
-            loadTopic = Topic(snapshot: snapshot)
-            
-            let imageRef = FIRStorage.storage().reference(withPath: "/" + loadTopic.imageURL)
-            imageRef.data(withMaxSize: 1024 * 1024 * 1024) { data, error in
-                if let error = error {
-                    // Uh-oh, an error occurred!
-                    print(error)
-                }
-                else
-                {
-                    self.TopicImage.image = UIImage(data: data!)
+                let imageRef = FIRStorage.storage().reference(withPath: "/" + loadTopic!.imageURL)
+                imageRef.data(withMaxSize: 1024 * 1024 * 1024) { data, error in
+                    if let error = error {
+                        // Uh-oh, an error occurred!
+                        print(error)
+                    }
+                    else
+                    {
+                        self.TopicImage.image = UIImage(data: data!)
+                    }
                 }
             }
-        })
+        }
+        
+//        self.topicRef.child(topic).observeSingleEvent(of: .value, with: { snapshot in
+//            
+//            var loadTopic:Topic
+//            
+//            if !snapshot.exists()
+//            {
+//                return
+//            }
+//            
+//            loadTopic = Topic(snapshot: snapshot)
+//            
+//            let imageRef = FIRStorage.storage().reference(withPath: "/" + loadTopic.imageURL)
+//            imageRef.data(withMaxSize: 1024 * 1024 * 1024) { data, error in
+//                if let error = error {
+//                    // Uh-oh, an error occurred!
+//                    print(error)
+//                }
+//                else
+//                {
+//                    self.TopicImage.image = UIImage(data: data!)
+//                }
+//            }
+//        })
     }
     
     @IBAction func ChooseOption1(_ sender: UIButton) {
@@ -284,7 +302,7 @@ UINavigationControllerDelegate {
     //--
     
     func updateVoteCount(topic:String, option:String)
-    {
+    {        
         self.voteCountRef.observeSingleEvent(of: .value, with: { snapshot in
             
             if !snapshot.exists()
